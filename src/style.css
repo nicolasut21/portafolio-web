@@ -3,14 +3,13 @@
    ========================================================================== */
 
 :root {
-  /* Colors - Light Theme (Default: Clean Tech Slate & Indigo) */
+  /* Colors - Light Theme */
   --bg-main: #f8fafc;
-  --bg-gradient: radial-gradient(circle at 12% 15%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
-                 radial-gradient(circle at 88% 85%, rgba(71, 85, 105, 0.03) 0%, transparent 50%);
-  --card-bg: #ffffff;
+  --bg-grid-color: rgba(15, 23, 42, 0.045);
+  --card-bg: rgba(255, 255, 255, 0.9);
   --card-bg-subtle: #f1f5f9;
-  --card-border: rgba(15, 23, 42, 0.08);
-  --card-border-hover: rgba(37, 99, 235, 0.35);
+  --card-border: rgba(15, 23, 42, 0.09);
+  --card-border-hover: rgba(37, 99, 235, 0.4);
   
   --text-primary: #0f172a;
   --text-secondary: #334155;
@@ -19,7 +18,7 @@
   /* Brand Accents - Tech Indigo */
   --accent-indigo: #2563eb;
   --accent-indigo-hover: #1d4ed8;
-  --accent-indigo-light: rgba(37, 99, 235, 0.08);
+  --accent-indigo-light: rgba(37, 99, 235, 0.09);
   
   --accent-slate: #475569;
   --accent-slate-light: rgba(71, 85, 105, 0.08);
@@ -28,11 +27,11 @@
   --accent-gradient: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
   --accent-gradient-hover: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-  --shadow-lg: 0 16px 36px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
-  --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.16);
+  /* Shadows con elevación realista */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 40px -4px rgba(15, 23, 42, 0.1), 0 6px 16px -2px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.2);
 
   /* Code Block */
   --code-bg: #0f172a;
@@ -51,12 +50,11 @@
 /* Dark Mode overrides */
 html.dark {
   --bg-main: #0b0f19;
-  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.09) 0%, transparent 50%),
-                 radial-gradient(circle at 90% 80%, rgba(30, 41, 59, 0.25) 0%, transparent 50%);
-  --card-bg: #111827;
+  --bg-grid-color: rgba(255, 255, 255, 0.045);
+  --card-bg: rgba(17, 24, 39, 0.85);
   --card-bg-subtle: #1e293b;
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-hover: rgba(59, 130, 246, 0.45);
+  --card-border: rgba(255, 255, 255, 0.09);
+  --card-border-hover: rgba(59, 130, 246, 0.5);
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -64,16 +62,16 @@ html.dark {
 
   --accent-indigo: #3b82f6;
   --accent-indigo-hover: #60a5fa;
-  --accent-indigo-light: rgba(59, 130, 246, 0.14);
+  --accent-indigo-light: rgba(59, 130, 246, 0.16);
   
-  --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 20px 40px -4px rgba(0, 0, 0, 0.55);
-  --shadow-glow: 0 0 28px rgba(37, 99, 235, 0.25);
+  --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 48px -4px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.3);
   --code-bg: #030712;
 }
 
 /* ==========================================================================
-   RESET & BASE STYLES
+   RESET & BASE STYLES CON RETÍCULA Y PROFUNDIDAD
    ========================================================================== */
 
 *, *::before, *::after {
@@ -86,7 +84,13 @@ html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
   background-color: var(--bg-main);
-  background-image: var(--bg-gradient);
+  /* Retícula de ingeniería con desvanecimiento radial */
+  background-image: 
+    radial-gradient(ellipse 65% 50% at 50% 15%, rgba(37, 99, 235, 0.11) 0%, transparent 80%),
+    radial-gradient(ellipse 60% 45% at 85% 65%, rgba(71, 85, 105, 0.07) 0%, transparent 75%),
+    linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
@@ -97,6 +101,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -300,6 +305,25 @@ html.dark .btn-primary {
 .hero-section {
   padding-top: 10.5rem;
   padding-bottom: 4rem;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(780px, 92vw);
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 75%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+html.dark .hero-section::before {
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.18) 0%, rgba(37, 99, 235, 0.06) 50%, transparent 75%);
 }
 
 .hero-badge-wrap {
@@ -308,6 +332,8 @@ html.dark .btn-primary {
   gap: 0.65rem;
   padding: 0.4rem 1rem;
   background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -380,6 +406,8 @@ html.dark .btn-primary {
   font-weight: 600;
   color: var(--text-primary);
   background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 9999px;
   transition: all var(--duration-fast);
@@ -398,6 +426,7 @@ html.dark .btn-primary {
 
 .bento-section {
   padding-bottom: 5.5rem;
+  position: relative;
 }
 
 .bento-grid {
@@ -408,6 +437,8 @@ html.dark .btn-primary {
 
 .bento-card {
   background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: 24px;
   padding: 2rem;
@@ -746,6 +777,8 @@ html.dark .btn-primary {
 
 .project-card {
   background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   overflow: hidden;
