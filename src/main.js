@@ -181,6 +181,9 @@ ORDER BY 1 DESC;`,
 function renderApp() {
   const app = document.querySelector('#app');
   app.innerHTML = `
+    <!-- Barra de progreso de scroll dinámica -->
+    <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Navegación Sticky Minimalista -->
     <header class="navbar">
       <nav class="nav-content" aria-label="Navegación principal">
@@ -209,7 +212,7 @@ function renderApp() {
 
     <main>
       <!-- Hero Section -->
-      <section id="hero" class="hero-section container">
+      <section id="hero" class="hero-section container reveal-on-scroll is-visible">
         <div class="hero-badge-wrap">
           <span class="pulse-indicator"></span>
           <span>Disponible para proyectos & innovación digital</span>
@@ -239,7 +242,7 @@ function renderApp() {
 
       <!-- Bento Grid Showcase (Propuesta 2.5 Core) -->
       <section id="bento" class="section bento-section container">
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <span class="section-tag">Tablero de Innovación</span>
           <h2 class="section-title">Ecosistema interactivo de diseño & producto.</h2>
           <p class="section-description">
@@ -247,9 +250,9 @@ function renderApp() {
           </p>
         </div>
 
-        <div class="bento-grid">
+        <div class="bento-grid stagger-parent">
           <!-- Bento 1: Proyecto Destacado (Fintech) -->
-          <article class="bento-card bento-featured" id="card-featured-fintech">
+          <article class="bento-card bento-featured reveal-on-scroll" id="card-featured-fintech">
             <div class="bento-card-header">
               <span class="bento-pill bento-pill-indigo">Caso Destacado</span>
               <span class="bento-pill">UI/UX + Full-Stack</span>
@@ -268,7 +271,7 @@ function renderApp() {
           </article>
 
           <!-- Bento 2: Prototipado Interactivo -->
-          <article class="bento-card bento-prototype" id="card-prototype">
+          <article class="bento-card bento-prototype reveal-on-scroll" id="card-prototype">
             <div class="bento-card-header">
               <span class="bento-pill bento-pill-indigo">Prototipo Interactivo</span>
               <span id="proto-status" style="font-size: 0.75rem; font-weight: 600; color: var(--accent-indigo);">● Vista Activa</span>
@@ -290,7 +293,7 @@ function renderApp() {
           </article>
 
           <!-- Bento 3: Proceso de Trabajo (4 Pasos) -->
-          <article class="bento-card bento-process" id="card-process">
+          <article class="bento-card bento-process reveal-on-scroll" id="card-process">
             <div class="bento-card-header">
               <span class="bento-pill bento-pill-indigo">Metodología de Innovación</span>
               <span style="font-size: 0.8125rem; color: var(--text-muted);">Haz clic en cada fase</span>
@@ -325,7 +328,7 @@ function renderApp() {
           </article>
 
           <!-- Bento 4: Métricas & Enfoque Analítico -->
-          <article class="bento-card bento-metrics" id="card-metrics">
+          <article class="bento-card bento-metrics reveal-on-scroll" id="card-metrics">
             <div class="bento-card-header">
               <span class="bento-pill bento-pill-indigo">Impacto Analítico</span>
               <span class="metric-badge-trend">↑ Rendimiento</span>
@@ -356,7 +359,7 @@ function renderApp() {
           </article>
 
           <!-- Bento 5: Live Code Preview -->
-          <article class="bento-card bento-code" id="card-code">
+          <article class="bento-card bento-code reveal-on-scroll" id="card-code">
             <div class="bento-card-header">
               <span class="bento-pill">Live Code Preview</span>
               <button id="btn-copy-code" class="btn-secondary" style="padding: 0.25rem 0.65rem; font-size: 0.75rem;" title="Copiar código al portapapeles">
@@ -375,9 +378,9 @@ function renderApp() {
           </article>
 
           <!-- Bento 6: Stack Tecnológico Interactivo -->
-          <article class="bento-card bento-stack" id="card-stack">
+          <article class="bento-card bento-stack reveal-on-scroll" id="card-stack">
             <div class="bento-card-header">
-              <span class="bento-pill bento-pill-purple">Stack Interactivo</span>
+              <span class="bento-pill bento-pill-indigo">Stack Interactivo</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);" id="stack-count">18 Tecnologías</span>
             </div>
             <h3 class="bento-card-title">Habilidades & Ecosistema</h3>
@@ -397,7 +400,7 @@ function renderApp() {
 
       <!-- Galería de Casos de Estudio Detallados -->
       <section id="proyectos" class="section projects-section container">
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <span class="section-tag">Portafolio Seleccionado</span>
           <h2 class="section-title">Casos de estudio & proyectos aplicados.</h2>
           <p class="section-description">
@@ -405,9 +408,9 @@ function renderApp() {
           </p>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid stagger-parent">
           ${caseStudies.map(cs => `
-            <article class="project-card" id="project-${cs.id}">
+            <article class="project-card reveal-on-scroll" id="project-${cs.id}">
               <div class="project-img-wrapper">
                 <img src="${cs.img}" alt="${cs.title}" loading="lazy" />
               </div>
@@ -432,7 +435,7 @@ function renderApp() {
       <!-- Sobre Mí & Metodología de Innovación -->
       <section id="metodologia" class="section about-section container">
         <div class="about-grid">
-          <div class="about-photo-card">
+          <div class="about-photo-card reveal-on-scroll">
             <div class="about-highlight-box">
               <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; opacity: 0.9;">
                 Perfil Profesional
@@ -449,7 +452,7 @@ function renderApp() {
             </div>
           </div>
 
-          <div class="about-content-text">
+          <div class="about-content-text reveal-on-scroll">
             <span class="section-tag">Mi Filosofía de Trabajo</span>
             <h2 class="section-title">El puente entre la empatía del diseño y el rigor de la ingeniería.</h2>
             <p>
@@ -477,7 +480,7 @@ function renderApp() {
 
       <!-- Contacto & Footer -->
       <section id="contacto" class="section contact-section container">
-        <div class="contact-card-box">
+        <div class="contact-card-box reveal-on-scroll">
           <div class="contact-info-col">
             <span class="section-tag">Iniciemos una Conversación</span>
             <h3>¿Tienes un proyecto en mente o una oportunidad de equipo?</h3>
@@ -532,7 +535,7 @@ function renderApp() {
           © ${new Date().getFullYear()} Nicolás. Diseñado & Desarrollado con <strong>Vite, Vanilla JS & CSS Moderno</strong>.
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">
-          <a href="#hero" style="color: var(--accent-purple); font-weight: 600;">Volver arriba ↑</a>
+          <a href="#hero" style="color: var(--accent-indigo); font-weight: 600;">Volver arriba ↑</a>
         </div>
       </div>
     </footer>
@@ -561,6 +564,7 @@ function renderApp() {
   setupCaseStudiesModal();
   setupContactForm();
   setupCopyButtons();
+  setupScrollAnimations();
 }
 
 // 1. Theme Toggle (Light / Dark)
@@ -843,6 +847,43 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3500);
+}
+
+// 9. Animaciones de scroll y barra de progreso
+function setupScrollAnimations() {
+  const progressBar = document.querySelector('#scroll-progress');
+
+  // Actualizar barra de progreso con el scroll
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) {
+      progressBar.style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+    }
+  }, { passive: true });
+
+  // IntersectionObserver para reveal suave de secciones y tarjetas
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
 }
 
 // Launch application
