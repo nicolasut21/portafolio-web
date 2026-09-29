@@ -205,9 +205,32 @@ function renderApp() {
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
-          <a href="#contacto" class="btn-primary" id="btn-cta-nav">Hablemos ↗</a>
+          <a href="#contacto" class="btn-primary desktop-cta" id="btn-cta-nav">Hablemos ↗</a>
+          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
+            <svg id="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </nav>
+
+      <!-- Menú desplegable para móviles -->
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+        <ul class="mobile-menu-list">
+          <li><a href="#hero" class="mobile-menu-link">Inicio</a></li>
+          <li><a href="#bento" class="mobile-menu-link">Visión General</a></li>
+          <li><a href="#proyectos" class="mobile-menu-link">Casos de Estudio</a></li>
+          <li><a href="#metodologia" class="mobile-menu-link">Mi Enfoque</a></li>
+          <li><a href="#contacto" class="mobile-menu-link">Contacto</a></li>
+        </ul>
+        <div style="margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid var(--card-border);">
+          <a href="#contacto" class="btn-primary btn-gradient mobile-menu-link" style="width: 100%; justify-content: center; text-align: center;">
+            Hablemos Directo ↗
+          </a>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -557,6 +580,7 @@ function renderApp() {
 
   // Attach all interactive event listeners
   setupThemeToggle();
+  setupMobileMenu();
   setupBentoPrototype();
   setupBentoProcess();
   setupLiveCodePreview();
@@ -739,7 +763,7 @@ function setupCaseStudiesModal() {
         <img src="${cs.img}" alt="${cs.title}" style="width: 100%; height: auto;" />
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+      <div class="modal-split-grid" style="margin-bottom: 2rem;">
         <div style="background: var(--card-bg-subtle); padding: 1.5rem; border-radius: 16px;">
           <h4 style="font-size: 0.9375rem; font-weight: 700; color: #ef4444; margin-bottom: 0.5rem;">El Desafío / Problema</h4>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">${cs.challenge}</p>
@@ -755,7 +779,7 @@ function setupCaseStudiesModal() {
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem;">
           ${cs.impact.map(imp => `
             <li style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.9375rem; font-weight: 500; color: var(--text-primary);">
-              <span style="color: var(--accent-purple); font-weight: 800;">✓</span>
+              <span style="color: var(--accent-indigo); font-weight: 800;">✓</span>
               <span>${imp}</span>
             </li>
           `).join('')}
@@ -884,6 +908,57 @@ function setupScrollAnimations() {
   } else {
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
+}
+
+// 10. Menú móvil interactivo
+function setupMobileMenu() {
+  const btn = document.querySelector('#mobile-menu-btn');
+  const drawer = document.querySelector('#mobile-menu-drawer');
+  const icon = document.querySelector('#hamburger-icon');
+  const links = document.querySelectorAll('.mobile-menu-link');
+
+  if (!btn || !drawer) return;
+
+  function toggleMenu(forceClose = false) {
+    const isOpen = forceClose ? false : !drawer.classList.contains('open');
+    if (isOpen) {
+      drawer.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      if (icon) {
+        icon.innerHTML = `
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        `;
+      }
+    } else {
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      if (icon) {
+        icon.innerHTML = `
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        `;
+      }
+    }
+  }
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(true));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#mobile-menu-drawer') && !e.target.closest('#mobile-menu-btn')) {
+      toggleMenu(true);
+    }
+  });
 }
 
 // Launch application
