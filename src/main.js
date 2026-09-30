@@ -512,9 +512,9 @@ function renderApp() {
             </p>
 
             <div class="contact-links-list">
-              <a href="mailto:nicolas.contacto.dev@gmail.com" class="contact-link-item" id="link-email">
+              <a href="mailto:nicolasut21@gmail.com" class="contact-link-item" id="link-email">
                 <span>✉️</span>
-                <span>nicolas.contacto.dev@gmail.com</span>
+                <span>nicolasut21@gmail.com</span>
               </a>
               <a href="https://github.com/nicolasut21" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="link-github">
                 <span>🐙</span>
@@ -581,6 +581,7 @@ function renderApp() {
   // Attach all interactive event listeners
   setupThemeToggle();
   setupMobileMenu();
+  setupSmartNavbar();
   setupBentoPrototype();
   setupBentoProcess();
   setupLiveCodePreview();
@@ -852,7 +853,7 @@ function setupContactForm() {
 // 8. Copy email buttons & Toast
 function setupCopyButtons() {
   const copyEmailHero = document.querySelector('#btn-copy-email-hero');
-  const email = 'nicolas.contacto.dev@gmail.com';
+  const email = 'nicolasut21@gmail.com';
 
   if (copyEmailHero) {
     copyEmailHero.addEventListener('click', () => {
@@ -959,6 +960,57 @@ function setupMobileMenu() {
       toggleMenu(true);
     }
   });
+}
+
+// 11. Smart Navbar - Ocultar barra al scrollear hacia abajo y reaparecer al subir o al tope
+function setupSmartNavbar() {
+  const navbar = document.querySelector('.navbar');
+  const drawer = document.querySelector('#mobile-menu-drawer');
+  if (!navbar) return;
+
+  let lastScrollY = window.scrollY || document.documentElement.scrollTop;
+  let ticking = false;
+  const threshold = 8;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY || document.documentElement.scrollTop;
+        const diff = currentScrollY - lastScrollY;
+
+        // Si está en el tope inicial de la página (<= 35px), siempre mostrar
+        if (currentScrollY <= 35) {
+          navbar.classList.remove('nav-hidden');
+        } else if (diff > threshold && currentScrollY > 70) {
+          // Scrolleando hacia abajo: ocultar para dejar libre la lectura
+          navbar.classList.add('nav-hidden');
+
+          // Si el menú móvil estaba abierto, cerrarlo automáticamente
+          if (drawer && drawer.classList.contains('open')) {
+            const btn = document.querySelector('#mobile-menu-btn');
+            const icon = document.querySelector('#hamburger-icon');
+            drawer.classList.remove('open');
+            drawer.setAttribute('aria-hidden', 'true');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            if (icon) {
+              icon.innerHTML = `
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              `;
+            }
+          }
+        } else if (diff < -threshold) {
+          // Scrolleando hacia arriba: reaparecer suavemente
+          navbar.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = Math.max(0, currentScrollY);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // Launch application
