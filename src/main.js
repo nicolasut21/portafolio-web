@@ -3,6 +3,26 @@ import './style.css';
 // Project Case Studies Data
 const caseStudies = [
   {
+    id: 'maldonado',
+    title: 'Ferretería Maldonado — Sistema POS & Control de Negocio',
+    subtitle: 'Plataforma integral de punto de venta, gestión de inventario y caja en tiempo real para optimizar la toma de decisiones comerciales.',
+    role: 'Full-Stack Developer & UI/UX Designer',
+    tags: ['React', 'Node.js', 'MongoDB', 'Vercel', 'Render'],
+    metric: 'Control Total & Toma de Decisiones',
+    img: './projects/maldonado.png',
+    extraImg: './projects/maldonado_mobile.png',
+    summary: 'Sistema web a medida desarrollado para Ferretería Maldonado (sucursal Las Cabras). Permitió transformar una operación con nula visibilidad en un entorno digitalizado con control integral de ventas diarias y mensuales, caja, productos bajo stock crítico, cotizaciones y despachos.',
+    challenge: 'El negocio operaba con cero control sistematizado de ventas, inventario y finanzas diarias. Las existencias críticas se detectaban tarde provocando quiebres de stock, y no existían métricas centralizadas para evaluar el rendimiento ni tomar decisiones comerciales con certeza.',
+    solution: 'Desarrollo de una solución Full-Stack con React en frontend (desplegado en Vercel) y Node.js con Express en backend (desplegado en Render), conectado a MongoDB. Arquitectura con dashboard de KPIs en tiempo real, alertas automáticas para productos con bajo stock, y una interfaz limpia y responsiva adaptada a mostrador y móvil.',
+    impact: [
+      'Transición de cero control a un manejo 100% digital y centralizado del negocio',
+      'Visibilidad en tiempo real de ingresos diarios y mensuales ($1.374.520+ monitoreados)',
+      'Alertas tempranas de stock crítico evitando quiebres de inventario en mostrador',
+      'Diseño 100% responsivo para operar en mostrador (desktop) y en movilidad (smartphone)'
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render', 'REST API', 'CSS Responsivo']
+  },
+  {
     id: 'fintech',
     title: 'Luma Fintech — Ecosistema Bancario & Pagos Inteligentes',
     subtitle: 'Rediseño de producto digital móvil y web con enfoque en reducción de fricción transaccional.',
@@ -66,6 +86,7 @@ const techStack = [
   { name: 'HTML5 Semántico', category: 'frontend', icon: '📄' },
   { name: 'CSS3 / Variables & Grid', category: 'frontend', icon: '🎨' },
   { name: 'Node.js', category: 'backend', icon: '🟢' },
+  { name: 'MongoDB', category: 'backend', icon: '🍃' },
   { name: 'Express / REST APIs', category: 'backend', icon: '🚀' },
   { name: 'PostgreSQL & SQL', category: 'backend', icon: '🐘' },
   { name: 'Arquitectura Limpia', category: 'backend', icon: '🏛️' },
@@ -73,6 +94,7 @@ const techStack = [
   { name: 'Design Systems & Tokens', category: 'design', icon: '📐' },
   { name: 'Investigación de Usuarios (UX)', category: 'design', icon: '🔍' },
   { name: 'Wireframing & UI Flow', category: 'design', icon: '✏️' },
+  { name: 'Vercel & Render', category: 'tools', icon: '▲' },
   { name: 'Git & GitHub Actions', category: 'tools', icon: '🐙' },
   { name: 'Docker Containers', category: 'tools', icon: '🐳' },
   { name: 'Vite & Webpack', category: 'tools', icon: '⚡' },
@@ -760,9 +782,26 @@ function setupCaseStudiesModal() {
         <p style="color: var(--text-secondary); font-size: 1.05rem;">${cs.subtitle}</p>
       </div>
 
-      <div style="border-radius: 18px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--card-border);">
-        <img src="${cs.img}" alt="${cs.title}" style="width: 100%; height: auto;" />
-      </div>
+      ${cs.extraImg ? `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+          <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg-subtle);">
+            <div style="padding: 0.6rem 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); border-bottom: 1px solid var(--card-border);">
+              🖥️ Vista Desktop (Sistema Caja & Panel General)
+            </div>
+            <img src="${cs.img}" alt="${cs.title} Desktop" style="width: 100%; height: auto; display: block;" />
+          </div>
+          <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg-subtle);">
+            <div style="padding: 0.6rem 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); border-bottom: 1px solid var(--card-border);">
+              📱 Vista Móvil (Panel General & Alertas)
+            </div>
+            <img src="${cs.extraImg}" alt="${cs.title} Móvil" style="width: 100%; height: auto; display: block;" />
+          </div>
+        </div>
+      ` : `
+        <div style="border-radius: 18px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--card-border);">
+          <img src="${cs.img}" alt="${cs.title}" style="width: 100%; height: auto;" />
+        </div>
+      `}
 
       <div class="modal-split-grid" style="margin-bottom: 2rem;">
         <div style="background: var(--card-bg-subtle); padding: 1.5rem; border-radius: 16px;">
