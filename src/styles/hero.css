@@ -1,0 +1,98 @@
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero-section {
+  padding-top: 10.5rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(780px, 92vw);
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 75%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+html.dark .hero-section::before {
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.18) 0%, rgba(37, 99, 235, 0.06) 50%, transparent 75%);
+}
+
+.hero-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.4rem 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.75rem;
+}
+
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulse-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: #10b981;
+  opacity: 0.4;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  max-width: 980px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-gradient-text {
+  color: var(--accent-indigo);
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}

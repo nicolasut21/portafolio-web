@@ -1,0 +1,22 @@
+export const techStack = [
+  { name: 'JavaScript / ESNext', category: 'frontend', icon: '⚡' },
+  { name: 'TypeScript', category: 'frontend', icon: '🔷' },
+  { name: 'React & Hooks', category: 'frontend', icon: '⚛️' },
+  { name: 'HTML5 Semántico', category: 'frontend', icon: '📄' },
+  { name: 'CSS3 / Variables & Grid', category: 'frontend', icon: '🎨' },
+  { name: 'Node.js', category: 'backend', icon: '🟢' },
+  { name: 'MongoDB', category: 'backend', icon: '🍃' },
+  { name: 'Express / REST APIs', category: 'backend', icon: '🚀' },
+  { name: 'PostgreSQL & SQL', category: 'backend', icon: '🐘' },
+  { name: 'Arquitectura Limpia', category: 'backend', icon: '🏛️' },
+  { name: 'Figma & Prototipado', category: 'design', icon: '🎯' },
+  { name: 'Design Systems & Tokens', category: 'design', icon: '📐' },
+  { name: 'Investigación de Usuarios (UX)', category: 'design', icon: '🔍' },
+  { name: 'Wireframing & UI Flow', category: 'design', icon: '✏️' },
+  { name: 'Vercel & Render', category: 'tools', icon: '▲' },
+  { name: 'Git & GitHub Actions', category: 'tools', icon: '🐙' },
+  { name: 'Docker Containers', category: 'tools', icon: '🐳' },
+  { name: 'Vite & Webpack', category: 'tools', icon: '⚡' },
+  { name: 'Google Cloud Platform (GCP)', category: 'tools', icon: '☁️' },
+  { name: 'Análisis de Métricas / KPIs', category: 'tools', icon: '📊' }
+];

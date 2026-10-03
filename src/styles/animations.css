@@ -1,0 +1,49 @@
+/* ==========================================================================
+   SCROLL REVEAL & PROGRESS BAR ANIMATIONS
+   ========================================================================== */
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-gradient);
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
+  transition: width 0.08s ease-out;
+  pointer-events: none;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay para animaciones en cascada */
+.bento-grid.stagger-parent .bento-card:nth-child(1) { transition-delay: 0.05s; }
+.bento-grid.stagger-parent .bento-card:nth-child(2) { transition-delay: 0.12s; }
+.bento-grid.stagger-parent .bento-card:nth-child(3) { transition-delay: 0.19s; }
+.bento-grid.stagger-parent .bento-card:nth-child(4) { transition-delay: 0.26s; }
+.bento-grid.stagger-parent .bento-card:nth-child(5) { transition-delay: 0.33s; }
+.bento-grid.stagger-parent .bento-card:nth-child(6) { transition-delay: 0.40s; }
+
+.projects-grid.stagger-parent .project-card:nth-child(1) { transition-delay: 0.08s; }
+.projects-grid.stagger-parent .project-card:nth-child(2) { transition-delay: 0.16s; }
+.projects-grid.stagger-parent .project-card:nth-child(3) { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

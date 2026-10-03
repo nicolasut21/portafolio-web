@@ -1,0 +1,106 @@
+/* ==========================================================================
+   ABOUT & METHODOLOGY
+   ========================================================================== */
+
+.about-section {
+  padding: 5.5rem 0;
+  border-top: 1px solid var(--card-border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-photo-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-highlight-box {
+  background: var(--accent-gradient);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-highlight-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+}
+
+.about-role-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.about-role-sub {
+  font-size: 1rem;
+  opacity: 0.92;
+  line-height: 1.6;
+}
+
+.about-content-text p {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pillar-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-indigo-light);
+  color: var(--accent-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.pillar-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+.pillar-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
