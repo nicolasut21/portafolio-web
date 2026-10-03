@@ -23,7 +23,7 @@ export function renderAbout() {
           <span class="section-tag">Mi Filosofía de Trabajo</span>
           <h2 class="section-title">El puente entre la empatía del diseño y el rigor de la ingeniería.</h2>
           <p>
-            Mi formación y pasión se encuentran en el punto exacto donde convergen el <strong>diseño UI/UX y el desarrollo Full-Stack</strong>. No considero que el diseño y el código sean disciplinas aisladas: una gran experiencia de usuario depende tanto de un flujo visual intuitivo como de tiempos de respuesta ultrarrápidos y una base de datos optimizada.
+            Mi formación y pasión se encuentran en el punto exacto donde convergen el <strong>diseño UI/UX y el desarrollo <span style="white-space: nowrap;">Full-Stack</span></strong>. No considero que el diseño y el código sean disciplinas aisladas: una gran experiencia de usuario depende tanto de un flujo visual intuitivo como de tiempos de respuesta ultrarrápidos y una base de datos optimizada.
           </p>
           <p>
             Me apasiona la <strong>transformación digital</strong> y el análisis de datos de comportamiento. Como profesional recién egresado hace un año, aporto una perspectiva fresca, metodologías modernas, proactividad y una enorme motivación para resolver problemas complejos con soluciones elegantes.
