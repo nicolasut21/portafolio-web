@@ -23,8 +23,8 @@ export function renderBentoGrid() {
           <div class="project-preview-frame">
             <img src="./projects/fintech.jpg" alt="Mockup de la plataforma Fintech Luma" loading="lazy" />
           </div>
-          <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.8125rem; font-weight: 700; color: var(--accent-indigo);">Métrica: +38% conversión</span>
+          <div class="bento-featured-footer">
+            <span class="bento-featured-metric">Métrica: +38% conversión</span>
             <button class="view-case-btn" data-case="fintech">Explorar Caso Detallado →</button>
           </div>
         </article>
