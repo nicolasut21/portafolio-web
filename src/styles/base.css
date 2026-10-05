@@ -76,7 +76,7 @@ img {
 }
 
 .section {
-  padding: 5.5rem 0;
+  padding-block: 5.5rem;
   scroll-margin-top: 4.5rem;
 }
 

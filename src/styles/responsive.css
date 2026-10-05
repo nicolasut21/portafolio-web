@@ -5,7 +5,7 @@
 /* Tablets & Small Laptops (<= 1024px) */
 @media (max-width: 1024px) {
   .section {
-    padding: 4.5rem 0;
+    padding-block: 4.5rem;
     overflow-x: clip;
   }
 
@@ -80,7 +80,7 @@
   }
 
   .section {
-    padding: 3.5rem 0;
+    padding-block: 3.5rem;
     overflow-x: clip;
   }
 
@@ -179,8 +179,15 @@
     gap: 0.65rem;
   }
 
-  .project-preview-frame img, .prototype-screen-viewport {
-    height: 190px;
+  .project-preview-frame img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-position: top left;
+  }
+
+  .prototype-screen-viewport {
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
   .prototype-tabs {
@@ -246,7 +253,12 @@
   }
 
   .project-img-wrapper {
-    height: 190px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-img-wrapper img {
+    object-position: top left;
   }
 
   .project-card-body {
@@ -386,7 +398,7 @@
   }
 
   .section {
-    padding: 3rem 0;
+    padding-block: 3rem;
     overflow-x: clip;
   }
 
