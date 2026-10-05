@@ -18,9 +18,9 @@ export function renderContact() {
               <span>🐙</span>
               <span>github.com/nicolasut21</span>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="link-linkedin">
+            <a href="https://www.linkedin.com/in/abraham-urbano-toro/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="link-linkedin">
               <span>💼</span>
-              <span>linkedin.com/in/nicolas</span>
+              <span>linkedin.com/in/abraham-urbano-toro</span>
             </a>
           </div>
         </div>
