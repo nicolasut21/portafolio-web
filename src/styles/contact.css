@@ -3,21 +3,22 @@
    ========================================================================== */
 
 .contact-section {
-  padding-block: 5.5rem;
   border-top: 1px solid var(--card-border);
 }
 
 .contact-card-box {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 32px;
-  padding: 3.5rem;
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
   box-shadow: var(--shadow-lg);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  gap: 3rem;
   position: relative;
   overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .contact-info-col h3 {
@@ -93,10 +94,11 @@
 
 /* Footer */
 .footer {
-  padding-block: 3rem;
+  padding-block: 2.5rem;
   border-top: 1px solid var(--card-border);
   font-size: 0.875rem;
   color: var(--text-muted);
+  margin-top: 1.5rem;
 }
 
 .footer-content {

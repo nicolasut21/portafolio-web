@@ -71,17 +71,17 @@ img {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding-inline: 1.5rem;
   width: 100%;
 }
 
 .section {
-  padding-block: 5.5rem;
+  padding-block: 4.5rem;
   scroll-margin-top: 4.5rem;
 }
 
 .section-header {
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.75rem;
   max-width: 680px;
 }
 

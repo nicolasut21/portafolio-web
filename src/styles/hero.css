@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .hero-section {
-  padding-top: 10.5rem;
-  padding-bottom: 4rem;
+  padding-top: 9.5rem;
+  padding-bottom: 2.5rem;
   position: relative;
   overflow-x: clip;
 }
@@ -42,7 +42,7 @@ html.dark .hero-section::before {
   font-weight: 500;
   color: var(--text-secondary);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.35rem;
 }
 
 .pulse-indicator {
@@ -76,7 +76,7 @@ html.dark .hero-section::before {
   letter-spacing: -0.04em;
   color: var(--text-primary);
   max-width: 980px;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero-gradient-text {
@@ -88,7 +88,7 @@ html.dark .hero-section::before {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   max-width: 720px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   line-height: 1.65;
 }
 

@@ -3,14 +3,13 @@
    ========================================================================== */
 
 .about-section {
-  padding-block: 5.5rem;
   border-top: 1px solid var(--card-border);
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: start;
 }
 
@@ -28,7 +27,7 @@
 .about-highlight-box {
   background: var(--accent-gradient);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2.25rem 2rem;
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -48,7 +47,7 @@
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .about-role-sub {
@@ -61,15 +60,15 @@
   font-size: 1.0625rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   text-wrap: pretty;
 }
 
 .about-pillars-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .pillar-card {
