@@ -8,6 +8,8 @@ export const caseStudies = [
     metric: 'Control Total & Toma de Decisiones',
     img: './projects/maldonado.png',
     extraImg: './projects/maldonado_mobile.png',
+    desktopLabel: '🖥️ Vista Desktop (Sistema Caja & Panel General)',
+    mobileLabel: '📱 Vista Móvil (Panel General & Alertas)',
     summary: 'Sistema web a medida desarrollado para Ferretería Maldonado (sucursal Las Cabras). Permitió transformar una operación con nula visibilidad en un entorno digitalizado con control integral de ventas diarias y mensuales, caja, productos bajo stock crítico, cotizaciones y despachos.',
     challenge: 'El negocio operaba con cero control sistematizado de ventas, inventario y finanzas diarias. Las existencias críticas se detectaban tarde provocando quiebres de stock, y no existían métricas centralizadas para evaluar el rendimiento ni tomar decisiones comerciales con certeza.',
     solution: 'Desarrollo de una solución Full-Stack con React en frontend (desplegado en Vercel) y Node.js con Express en backend (desplegado en Render), conectado a MongoDB. Arquitectura con dashboard de KPIs en tiempo real, alertas automáticas para productos con bajo stock, y una interfaz limpia y responsiva adaptada a mostrador y móvil.',
@@ -18,6 +20,28 @@ export const caseStudies = [
       'Diseño 100% responsivo para operar en mostrador (desktop) y en movilidad (smartphone)'
     ],
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Vercel', 'Render', 'REST API', 'CSS Responsivo']
+  },
+  {
+    id: 'difunab',
+    title: 'difUnab — Sistema de Agendamiento & Difusión UNAB',
+    subtitle: 'Plataforma para coordinar visitas a colegios, charlas vocacionales y ferias para la Universidad Andrés Bello.',
+    role: 'Full-Stack Developer & UI/UX Designer',
+    tags: ['React', 'Node.js', 'MongoDB', 'TailwindCSS'],
+    metric: '+70% Eficiencia en Agendamiento',
+    img: './projects/difunab.jpg',
+    extraImg: './projects/difunab_mobile.jpg',
+    desktopLabel: '🖥️ Vista Desktop (Calendario de Actividades & KPIs)',
+    mobileLabel: '📱 Vista Móvil (Agenda Diaria & Asistencia en Terreno)',
+    summary: 'difUnab es una solución web integral desarrollada para el área de Difusión y Admisión de la Universidad Andrés Bello (UNAB). Centraliza y automatiza el agendamiento y seguimiento de actividades de reclutamiento vocacional: visitas guiadas a campus, charlas en colegios y participación en ferias vocacionales a nivel nacional.',
+    challenge: 'La coordinación de cientos de actividades semestrales con colegios dependía de planillas dispersas y correos manuales, provocando traslapes de fechas, falta de visibilidad en tiempo real para coordinadores de sede y dificultades para proyectar la asistencia de postulantes.',
+    solution: 'Desarrollo de una plataforma Full-Stack con React y TailwindCSS en el frontend y Node.js con Express en el backend, conectado a MongoDB. Implementación de un calendario interactivo con filtros por tipo de evento y sede, control de disponibilidad en tiempo real, registro de colegios asociados y módulo móvil para confirmación de asistencia en terreno.',
+    impact: [
+      'Digitalización y centralización del 100% del calendario de visitas y charlas vocacionales',
+      'Eliminación de traslapes de actividades y reducción del 70% en tiempos de confirmación con colegios',
+      'Monitoreo en tiempo real de más de 8,400 postulantes estimados y métricas de convocatoria por sede',
+      'Interfaz multidispositivo optimizada para uso en oficina (desktop) y coordinadores en terreno (móvil)'
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'TailwindCSS', 'REST API', 'Figma UI/UX']
   },
   {
     id: 'fintech',
@@ -54,23 +78,5 @@ export const caseStudies = [
       'Adopción completa por 3 equipos interdisciplinarios en menos de 2 meses'
     ],
     stack: ['Figma', 'Design Tokens', 'Storybook', 'Vanilla CSS Custom Properties', 'GitHub Actions']
-  },
-  {
-    id: 'analytics',
-    title: 'Aura Analytics — Dashboard SaaS de Transformación Digital',
-    subtitle: 'Plataforma B2B para visualización y análisis predictivo de procesos de modernización digital.',
-    role: 'Full-Stack Engineer & Data UX Designer',
-    tags: ['Analytics', 'Data Viz', 'Fastify', 'Chart.js / D3', 'Docker'],
-    metric: '<48ms Latencia de API',
-    img: './projects/analytics.jpg',
-    summary: 'Plataforma de inteligencia de negocio que traduce métricas complejas de adopción tecnológica y eficiencia operativa en paneles claros para toma de decisiones ejecutivas.',
-    challenge: 'Los reportes de transformación digital requerían consolidar datos dispersos de múltiples fuentes con tiempos de carga superiores a 5 segundos.',
-    solution: 'Construcción de un dashboard responsivo con arquitectura de microservicios ligera, consultas SQL optimizadas con indexación y gráficos interactivos de alto rendimiento.',
-    impact: [
-      'Visualización en tiempo real de más de 150,000 puntos de datos sin congelamiento',
-      'Aceleración de 5x en la generación de reportes ejecutivos mensuales',
-      'Satisfacción de usuario superior al 98% en encuestas trimestrales'
-    ],
-    stack: ['JavaScript ESNext', 'PostgreSQL', 'Docker', 'D3.js', 'Vite', 'RESTful API']
   }
 ];

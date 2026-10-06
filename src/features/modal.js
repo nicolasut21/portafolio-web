@@ -22,13 +22,13 @@ export function setupCaseStudiesModal() {
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
           <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg-subtle);">
             <div style="padding: 0.6rem 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); border-bottom: 1px solid var(--card-border);">
-              🖥️ Vista Desktop (Sistema Caja & Panel General)
+              ${cs.desktopLabel || '🖥️ Vista Desktop'}
             </div>
             <img src="${cs.img}" alt="${cs.title} Desktop" style="width: 100%; height: auto; display: block;" />
           </div>
           <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg-subtle);">
             <div style="padding: 0.6rem 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); border-bottom: 1px solid var(--card-border);">
-              📱 Vista Móvil (Panel General & Alertas)
+              ${cs.mobileLabel || '📱 Vista Móvil'}
             </div>
             <img src="${cs.extraImg}" alt="${cs.title} Móvil" style="width: 100%; height: auto; display: block;" />
           </div>
