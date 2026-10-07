@@ -96,9 +96,14 @@ export function setupTechStackFilter() {
     countEl.textContent = `${filtered.length} Tecnologías`;
 
     container.innerHTML = filtered.map(tech => `
-      <div class="tech-tag-pill">
-        <span>${tech.icon}</span>
-        <span>${tech.name}</span>
+      <div class="tech-grid-card" data-category="${tech.category}">
+        <div class="tech-icon-wrapper">
+          ${tech.iconSvg || ''}
+        </div>
+        <div class="tech-card-content">
+          <span class="tech-card-name">${tech.name}</span>
+          <span class="tech-card-tag">${tech.tag || tech.category}</span>
+        </div>
       </div>
     `).join('');
   }

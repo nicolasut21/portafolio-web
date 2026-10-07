@@ -355,30 +355,91 @@
 }
 
 .stack-pills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
-.tech-tag-pill {
-  display: inline-flex;
+.tech-grid-card {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.9rem;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
   background: var(--card-bg-subtle);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: all var(--duration-fast);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.tech-tag-pill:hover {
+.tech-grid-card:hover {
   background: var(--card-bg);
-  border-color: var(--accent-indigo);
-  color: var(--accent-indigo);
+  border-color: rgba(99, 102, 241, 0.45);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.09), 0 2px 4px rgba(0, 0, 0, 0.03);
 }
+
+.tech-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+  padding: 6px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.tech-grid-card:hover .tech-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.tech-icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tech-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.15rem;
+  overflow: hidden;
+}
+
+.tech-card-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.tech-card-tag {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+}
+
+/* Backward compatibility */
+.tech-tag-pill {
+  display: none;
+}
+

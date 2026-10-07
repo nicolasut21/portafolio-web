@@ -687,13 +687,31 @@
     gap: 0.5rem;
   }
 
-  .tech-tag-pill {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.55rem;
+  .stack-pills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 
-  .stack-pills-container {
-    gap: 0.4rem;
+  .tech-grid-card {
+    padding: 0.55rem 0.6rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .tech-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    padding: 4px;
+    border-radius: 8px;
+  }
+
+  .tech-card-name {
+    font-size: 0.75rem;
+  }
+
+  .tech-card-tag {
+    font-size: 0.625rem;
   }
 
   .metric-kpi-wrap {
