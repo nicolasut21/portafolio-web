@@ -62,15 +62,25 @@ export function setupCaseStudiesModal() {
         </ul>
       </div>
 
-      <div>
-        <h4 style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.75rem;">Tecnologías & Herramientas</h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          ${cs.stack.map(st => `
-            <span style="font-size: 0.8125rem; font-weight: 600; padding: 0.35rem 0.8rem; background: var(--card-bg-subtle); border-radius: 8px;">
-              ${st}
-            </span>
-          `).join('')}
+        <div>
+          <h4 style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.75rem;">Tecnologías & Herramientas</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            ${cs.stack.map(st => `
+              <span style="font-size: 0.8125rem; font-weight: 600; padding: 0.35rem 0.8rem; background: var(--card-bg-subtle); border-radius: 8px;">
+                ${st}
+              </span>
+            `).join('')}
+          </div>
         </div>
+
+        ${cs.github ? `
+          <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--card-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+            <span style="font-size: 0.8125rem; color: var(--text-muted); font-weight: 500;">Código fuente verificado:</span>
+            <a href="${cs.github}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8125rem; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span>🐙 Ver Repositorio en GitHub ↗</span>
+            </a>
+          </div>
+        ` : ''}
       </div>
     `;
 

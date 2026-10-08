@@ -8,8 +8,8 @@ export function setupBentoPrototype() {
   const protoStatus = document.querySelector('#proto-status');
 
   const views = {
-    mobile: { src: './projects/fintech.jpg', label: '● Vista Móvil (iOS/Android)' },
-    desktop: { src: './projects/analytics.jpg', label: '● Vista Dashboard Desktop' },
+    mobile: { src: './projects/safetrails_mobile.jpg', label: '● Vista Móvil (PWA & Alarmas)' },
+    desktop: { src: './projects/safetrails_desktop.jpg', label: '● Vista Dashboard Desktop' },
     flow: { src: './projects/design_system.jpg', label: '● Flujo de Arquitectura UX' }
   };
 

@@ -44,22 +44,27 @@ export const caseStudies = [
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'TailwindCSS', 'REST API', 'Figma UI/UX']
   },
   {
-    id: 'fintech',
-    title: 'Luma Fintech — Ecosistema Bancario & Pagos Inteligentes',
-    subtitle: 'Rediseño de producto digital móvil y web con enfoque en reducción de fricción transaccional.',
-    role: 'Lead UI/UX & Full-Stack Developer',
-    tags: ['UI/UX', 'React Native', 'Node.js', 'PostgreSQL', 'Design Systems'],
-    metric: '+38% Tasa de Conversión',
-    img: './projects/fintech.jpg',
-    summary: 'Luma es una solución financiera de última generación diseñada para simplificar el flujo de pagos y presupuestos personales mediante una interfaz minimalista, accesible y transparente.',
-    challenge: 'Los usuarios experimentaban una tasa de abandono del 42% en la pantalla de confirmación de transferencia bancaria debido a una sobrecarga cognitiva de pasos e interfaces poco claras.',
-    solution: 'Implementación de un flujo de checkout en 4 pasos simplificados con micro-interacciones, retroalimentación táctil y un backend optimizado que redujo la latencia de respuesta de 420ms a 48ms.',
+    id: 'safetrails',
+    title: 'SafeTrails — Plataforma PWA de Seguridad & Tracking en Senderos',
+    subtitle: 'Aplicación web progresiva de geolocalización en tiempo real con motor de alarmas por proximidad (geofencing) y trazado de rutas.',
+    role: 'Lead Frontend Developer & UI/UX Designer',
+    tags: ['React 19', 'TypeScript', 'Leaflet', 'PWA', 'TailwindCSS'],
+    metric: 'Geofencing Reactivo & Alertas en Terreno',
+    img: './projects/safetrails_desktop.jpg',
+    extraImg: './projects/safetrails_mobile.jpg',
+    desktopLabel: '🖥️ Vista Desktop (Centro de Control & Telemetría de Rutas)',
+    mobileLabel: '📱 Vista Móvil (App PWA & Alarmas en Terreno)',
+    github: 'https://github.com/safetrailscl-cyber/safetrails-frontend',
+    summary: 'SafeTrails es una Progressive Web App (PWA) de seguridad y navegación al aire libre desarrollada con React 19 y TypeScript. Diseñada para excursionistas y senderistas, integra geolocalización continua en tiempo real, mapas topográficos reactivos con Leaflet, gestión de puntos de interés (POIs) y un motor reactivo de alarmas con advertencias sonoras y visuales ante zonas de riesgo.',
+    challenge: 'En rutas agrestes o senderos de montaña, la pérdida de orientación, el desconocimiento de tramos peligrosos (curvas ciegas, acantilados, cruces complejos) y la falta de cobertura representan un riesgo crítico para la integridad de los excursionistas.',
+    solution: 'Arquitectura PWA orientada al rendimiento y fiabilidad en campo: rastreo continuo mediante Geolocation API, motor inteligente de geofencing (AlarmEngine) que calcula en tiempo real la proximidad a POIs de precaución emitiendo alertas acústicas y visuales, trazado dinámico de polilíneas de ruta, e interfaz de alto contraste diseñada para visibilidad bajo luz solar directa.',
     impact: [
-      '+38% incremento en transferencias completadas con éxito',
-      '-65% reducción en tickets de soporte técnico sobre dudas en transferencias',
-      'Puntuación de usabilidad (SUS) incrementada de 64 a 89 puntos'
+      'Detección perimetral instantánea de zonas de precaución con alertas visuales y auditivas en tiempo real',
+      'Rastreo GPS de alta precisión con registro continuo de distancia, ritmo y desniveles acumulados',
+      'Arquitectura PWA instalable con soporte offline y respuesta ultrarrápida impulsada por Vite y React 19',
+      'Experiencia mobile-first intuitiva pensada para operación con una sola mano en movimiento'
     ],
-    stack: ['React 18', 'TypeScript', 'Node.js', 'Express', 'Figma', 'TailwindCSS Tokens']
+    stack: ['React 19', 'TypeScript', 'Leaflet / React-Leaflet', 'PWA (Service Workers)', 'TailwindCSS', 'Lucide Icons', 'Vite', 'HTML5 Geolocation']
   },
   {
     id: 'design-system',

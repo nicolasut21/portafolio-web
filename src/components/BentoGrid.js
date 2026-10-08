@@ -10,22 +10,22 @@ export function renderBentoGrid() {
       </div>
 
       <div class="bento-grid stagger-parent">
-        <!-- Bento 1: Proyecto Destacado (Fintech) -->
-        <article class="bento-card bento-featured reveal-on-scroll" id="card-featured-fintech">
+        <!-- Bento 1: Proyecto Destacado (SafeTrails) -->
+        <article class="bento-card bento-featured reveal-on-scroll" id="card-featured-safetrails">
           <div class="bento-card-header">
             <span class="bento-pill bento-pill-indigo">Caso Destacado</span>
-            <span class="bento-pill">UI/UX + Full-Stack</span>
+            <span class="bento-pill">PWA + Leaflet + React 19</span>
           </div>
-          <h3 class="bento-card-title">Luma: Ecosistema Bancario & Pagos</h3>
+          <h3 class="bento-card-title">SafeTrails: PWA de Seguridad & Tracking</h3>
           <p class="bento-card-desc">
-            Simplificación radical de la experiencia de pago móvil y dashboard web. Reducción del abandono transaccional y arquitectura de datos optimizada en PostgreSQL.
+            Geolocalización en tiempo real con motor reactivo de geofencing (AlarmEngine), trazado dinámico de rutas con Leaflet y arquitectura offline en React 19.
           </p>
           <div class="project-preview-frame">
-            <img src="./projects/fintech.jpg" alt="Mockup de la plataforma Fintech Luma" loading="lazy" />
+            <img src="./projects/safetrails_desktop.jpg" alt="Mockup de la plataforma SafeTrails" loading="lazy" />
           </div>
           <div class="bento-featured-footer">
-            <span class="bento-featured-metric">Métrica: +38% conversión</span>
-            <button class="view-case-btn" data-case="fintech">Explorar Caso Detallado →</button>
+            <span class="bento-featured-metric">Métrica: Alertas en Terreno</span>
+            <button class="view-case-btn" data-case="safetrails">Explorar Caso Detallado →</button>
           </div>
         </article>
 
@@ -47,7 +47,7 @@ export function renderBentoGrid() {
           </div>
 
           <div class="prototype-screen-viewport" id="proto-viewport">
-            <img id="proto-img" src="./projects/fintech.jpg" alt="Vista de prototipo interactivo" />
+            <img id="proto-img" src="./projects/safetrails_mobile.jpg" alt="Vista de prototipo interactivo" />
           </div>
         </article>
 
