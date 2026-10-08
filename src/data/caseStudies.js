@@ -65,23 +65,5 @@ export const caseStudies = [
       'Experiencia mobile-first intuitiva pensada para operación con una sola mano en movimiento'
     ],
     stack: ['React 19', 'TypeScript', 'Leaflet / React-Leaflet', 'PWA (Service Workers)', 'TailwindCSS', 'Lucide Icons', 'Vite', 'HTML5 Geolocation']
-  },
-  {
-    id: 'design-system',
-    title: 'Neo Commerce — Design System Modular & Plataforma Headless',
-    subtitle: 'Arquitectura de componentes unificada para acelerar el desarrollo y mantener coherencia de marca.',
-    role: 'Product Designer & Frontend Architect',
-    tags: ['Design System', 'UI/UX', 'Figma Tokens', 'Vue/React', 'Storybook'],
-    metric: '4x Velocidad de Desarrollo',
-    img: './projects/design_system.jpg',
-    summary: 'Creación de un sistema de diseño integral y biblioteca de componentes reutilizables orientado a plataformas e-commerce con más de 120 módulos accesibles (WCAG AA).',
-    challenge: 'Equipos dispersos creaban componentes duplicados sin alineación estética, generando inconsistencias visuales en checkout y aumento de deuda técnica en frontend.',
-    solution: 'Diseño e implementación de un Design System en Figma con tokens sincronizados automáticamente mediante scripts de CI/CD hacia paquetes npm de React y CSS variables.',
-    impact: [
-      'Reducción del 70% en tiempo de entrega de nuevas funcionalidades',
-      '100% de cumplimiento en directrices de accesibilidad WCAG 2.1 AA',
-      'Adopción completa por 3 equipos interdisciplinarios en menos de 2 meses'
-    ],
-    stack: ['Figma', 'Design Tokens', 'Storybook', 'Vanilla CSS Custom Properties', 'GitHub Actions']
   }
 ];

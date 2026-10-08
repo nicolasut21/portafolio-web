@@ -251,6 +251,21 @@
     width: 100%;
   }
 
+  .building-now-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .building-card-media {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .building-card-body {
+    padding: 1.35rem;
+  }
+
   .project-card {
     min-width: 0;
     max-width: 100%;
