@@ -1,6 +1,7 @@
 import './style.css';
 
 // Components
+import { renderAmbientBackground } from './components/AmbientBackground.js';
 import { renderNavbar } from './components/Navbar.js';
 import { renderHero } from './components/Hero.js';
 import { renderBentoGrid } from './components/BentoGrid.js';
@@ -11,6 +12,7 @@ import { renderFooter } from './components/Footer.js';
 import { renderModal } from './components/Modal.js';
 
 // Features / Interactivity
+import { setupAmbientBackground } from './features/ambientBackground.js';
 import { setupThemeToggle } from './features/theme.js';
 import { setupMobileMenu, setupSmartNavbar } from './features/navigation.js';
 import { 
@@ -28,6 +30,7 @@ function initApp() {
   if (!app) return;
 
   app.innerHTML = `
+    ${renderAmbientBackground()}
     ${renderNavbar()}
     <main>
       ${renderHero()}
@@ -41,6 +44,7 @@ function initApp() {
   `;
 
   // Initialize interactive features
+  setupAmbientBackground();
   setupThemeToggle();
   setupMobileMenu();
   setupSmartNavbar();
