@@ -88,10 +88,8 @@ export function setupTechStackFilter() {
 
   if (!container || !countEl) return;
 
-  function renderPills(filter = 'all') {
-    const filtered = filter === 'all' 
-      ? techStack 
-      : techStack.filter(item => item.category === filter);
+  function renderPills(filter = 'frontend') {
+    const filtered = techStack.filter(item => item.category === filter);
     
     countEl.textContent = `${filtered.length} Tecnologías`;
 
@@ -116,5 +114,5 @@ export function setupTechStackFilter() {
     });
   });
 
-  renderPills('all');
+  renderPills('frontend');
 }

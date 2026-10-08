@@ -143,8 +143,7 @@ export function renderBentoGrid() {
           </div>
           <h3 class="bento-card-title">Habilidades & Ecosistema</h3>
           <div class="stack-filter-tabs">
-            <button class="stack-tab-btn active" data-filter="all">Todos</button>
-            <button class="stack-tab-btn" data-filter="frontend">Frontend</button>
+            <button class="stack-tab-btn active" data-filter="frontend">Frontend</button>
             <button class="stack-tab-btn" data-filter="backend">Backend</button>
             <button class="stack-tab-btn" data-filter="design">UI/UX & Design</button>
             <button class="stack-tab-btn" data-filter="tools">Cloud & Herramientas</button>
