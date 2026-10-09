@@ -38,15 +38,15 @@ html {
 
 .ambient-grid {
   position: absolute;
-  top: -40px;
-  left: -40px;
-  right: -40px;
-  bottom: -40px;
+  top: -80px;
+  left: -80px;
+  right: -80px;
+  bottom: -80px;
   background-image: 
-    linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
-  background-size: 38px 38px;
-  animation: ambientGridDrift 26s linear infinite;
+    linear-gradient(to right, var(--bg-grid-color) 1.2px, transparent 1.2px),
+    linear-gradient(to bottom, var(--bg-grid-color) 1.2px, transparent 1.2px);
+  background-size: 40px 40px;
+  animation: ambientGridDrift 12s linear infinite;
   will-change: transform;
 }
 
@@ -55,104 +55,132 @@ html {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(38px, 38px, 0);
+    transform: translate3d(80px, 80px, 0);
+  }
+}
+
+.ambient-shimmer {
+  position: absolute;
+  inset: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(37, 99, 235, 0.12) 0%, rgba(99, 102, 241, 0.06) 45%, transparent 75%);
+  animation: ambientShimmerSpin 20s linear infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+html.dark .ambient-shimmer {
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.08) 45%, transparent 75%);
+}
+
+@keyframes ambientShimmerSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.12);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
   }
 }
 
 .ambient-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(85px);
-  -webkit-filter: blur(85px);
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.75;
   mix-blend-mode: normal;
   will-change: transform;
 }
 
 html.dark .ambient-glow {
-  opacity: 0.38;
+  opacity: 0.60;
 }
 
 .ambient-glow-1 {
-  width: 650px;
-  height: 650px;
-  top: -10%;
-  left: 15%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
-  animation: floatGlow1 22s ease-in-out infinite alternate;
+  width: 700px;
+  height: 700px;
+  top: -12%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, rgba(37, 99, 235, 0.12) 48%, transparent 72%);
+  animation: floatGlow1 12s ease-in-out infinite alternate;
 }
 
 html.dark .ambient-glow-1 {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.42) 0%, rgba(59, 130, 246, 0.16) 48%, transparent 72%);
 }
 
 .ambient-glow-2 {
-  width: 580px;
-  height: 580px;
-  top: 40%;
-  right: -5%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 70%);
-  animation: floatGlow2 26s ease-in-out infinite alternate;
+  width: 640px;
+  height: 640px;
+  top: 35%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.32) 0%, rgba(14, 165, 233, 0.10) 48%, transparent 72%);
+  animation: floatGlow2 15s ease-in-out infinite alternate;
 }
 
 html.dark .ambient-glow-2 {
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.24) 0%, rgba(14, 165, 233, 0.06) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.36) 0%, rgba(14, 165, 233, 0.14) 48%, transparent 72%);
 }
 
 .ambient-glow-3 {
-  width: 620px;
-  height: 620px;
-  bottom: -5%;
+  width: 680px;
+  height: 680px;
+  bottom: -8%;
   left: 5%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(99, 102, 241, 0.03) 50%, transparent 70%);
-  animation: floatGlow3 30s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(139, 92, 246, 0.08) 48%, transparent 72%);
+  animation: floatGlow3 17s ease-in-out infinite alternate;
 }
 
 html.dark .ambient-glow-3 {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.36) 0%, rgba(139, 92, 246, 0.14) 48%, transparent 72%);
 }
 
 @keyframes floatGlow1 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(70px, 60px, 0) scale(1.12); }
-  100% { transform: translate3d(-50px, 80px, 0) scale(0.94); }
+  50% { transform: translate3d(110px, 90px, 0) scale(1.15); }
+  100% { transform: translate3d(-80px, 110px, 0) scale(0.92); }
 }
 
 @keyframes floatGlow2 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-80px, -60px, 0) scale(1.1); }
-  100% { transform: translate3d(50px, -40px, 0) scale(0.92); }
+  50% { transform: translate3d(-120px, -90px, 0) scale(1.14); }
+  100% { transform: translate3d(80px, -60px, 0) scale(0.9); }
 }
 
 @keyframes floatGlow3 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(60px, -50px, 0) scale(1.08); }
-  100% { transform: translate3d(-40px, 50px, 0) scale(0.95); }
+  50% { transform: translate3d(90px, -80px, 0) scale(1.12); }
+  100% { transform: translate3d(-70px, 80px, 0) scale(0.94); }
 }
 
 .ambient-interactive-spot {
   position: absolute;
   top: 0;
   left: 0;
-  width: 480px;
-  height: 480px;
+  width: 580px;
+  height: 580px;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0.03) 45%, transparent 70%);
-  filter: blur(40px);
-  -webkit-filter: blur(40px);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(37, 99, 235, 0.06) 45%, transparent 70%);
+  filter: blur(45px);
+  -webkit-filter: blur(45px);
   will-change: transform, opacity;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 html.dark .ambient-interactive-spot {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.05) 45%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.32) 0%, rgba(59, 130, 246, 0.10) 45%, transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ambient-grid,
+  .ambient-shimmer,
   .ambient-glow-1,
   .ambient-glow-2,
   .ambient-glow-3 {

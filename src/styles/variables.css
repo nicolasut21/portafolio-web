@@ -5,7 +5,7 @@
 :root {
   /* Colors - Light Theme */
   --bg-main: #f8fafc;
-  --bg-grid-color: rgba(15, 23, 42, 0.045);
+  --bg-grid-color: rgba(15, 23, 42, 0.11);
   --card-bg: rgba(255, 255, 255, 0.9);
   --card-bg-subtle: #f1f5f9;
   --card-border: rgba(15, 23, 42, 0.09);
@@ -50,7 +50,7 @@
 /* Dark Mode overrides */
 html.dark {
   --bg-main: #0b0f19;
-  --bg-grid-color: rgba(255, 255, 255, 0.045);
+  --bg-grid-color: rgba(147, 197, 253, 0.13);
   --card-bg: rgba(17, 24, 39, 0.85);
   --card-bg-subtle: #1e293b;
   --card-border: rgba(255, 255, 255, 0.09);
