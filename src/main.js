@@ -18,7 +18,6 @@ import { setupMobileMenu, setupSmartNavbar } from './features/navigation.js';
 import { 
   setupBentoPrototype, 
   setupBentoProcess, 
-  setupLiveCodePreview, 
   setupTechStackFilter 
 } from './features/bento.js';
 import { setupCaseStudiesModal } from './features/modal.js';
@@ -50,7 +49,6 @@ function initApp() {
   setupSmartNavbar();
   setupBentoPrototype();
   setupBentoProcess();
-  setupLiveCodePreview();
   setupTechStackFilter();
   setupCaseStudiesModal();
   setupContactForm();

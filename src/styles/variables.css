@@ -1,71 +1,88 @@
 /* ==========================================================================
-   DESIGN SYSTEM & CSS VARIABLES (TECH INDIGO & SLATE PALETTE)
+   POPEYE MAGAZINE EDITORIAL DESIGN SYSTEM & TOKENS
+   Inspired by popeyemagazine.jp (City Boy / Tech Journal Aesthetic)
    ========================================================================== */
 
 :root {
-  /* Colors - Light Theme */
-  --bg-main: #f8fafc;
-  --bg-grid-color: rgba(15, 23, 42, 0.11);
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-bg-subtle: #f1f5f9;
-  --card-border: rgba(15, 23, 42, 0.09);
-  --card-border-hover: rgba(37, 99, 235, 0.4);
-  
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  
-  /* Brand Accents - Tech Indigo */
-  --accent-indigo: #2563eb;
-  --accent-indigo-hover: #1d4ed8;
-  --accent-indigo-light: rgba(37, 99, 235, 0.09);
-  
-  --accent-slate: #475569;
-  --accent-slate-light: rgba(71, 85, 105, 0.08);
-  --accent-emerald: #059669;
-  
-  --accent-gradient: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
-  
-  /* Shadows con elevación realista */
-  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-  --shadow-lg: 0 20px 40px -4px rgba(15, 23, 42, 0.1), 0 6px 16px -2px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.2);
-
-  /* Code Block */
-  --code-bg: #0f172a;
-  --code-text: #e2e8f0;
-
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Dela Gothic One', cursive, sans-serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Colors - Light Theme (Signature Popeye Pale Blue & Editorial Ink) */
+  --bg-main: #dbeefc; /* Authentic Popeye pastel blue */
+  --bg-paper: #ffffff;
+  --bg-grid-color: rgba(10, 10, 10, 0.06);
+  
+  --card-bg: #ffffff;
+  --card-bg-subtle: #f4f8fb;
+  --card-border: #0a0a0a;
+  --card-border-hover: #0055ff;
+  --card-border-width: 1.5px;
+  
+  --text-primary: #0a0a0a;
+  --text-secondary: #262626;
+  --text-muted: #5a6578;
+  
+  /* Authentic Popeye Pop Accents */
+  --pop-orange: #ff5722;   /* Popeye Gathering Color */
+  --pop-blue: #0055ff;     /* Popeye Electric Blue */
+  --pop-yellow: #fde047;   /* Magazine Sun Yellow */
+  --pop-green: #00b074;    /* Fresh Mint Green */
+  --pop-pink: #ff6584;     /* Pop Editorial Pink */
+  --pop-sage: #b8d1c9;     /* Popeye Calendar Pale Sage */
+  
+  /* Brand compatibility */
+  --accent-indigo: #0055ff;
+  --accent-indigo-hover: #0044cc;
+  --accent-indigo-light: #e0ecff;
+  --accent-emerald: #00b074;
+
+  /* Shadows - Iconic Editorial Retro Offset Drop Shadows */
+  --shadow-sm: 2px 2px 0px #0a0a0a;
+  --shadow-md: 3.5px 3.5px 0px #0a0a0a;
+  --shadow-lg: 5px 5px 0px #0a0a0a;
+  --shadow-glow: 0 0 0 2px #0a0a0a, 4px 4px 0px #ff5722;
+  --shadow-retro: 3.5px 3.5px 0px #0a0a0a;
+
+  /* Border Radii */
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --radius-badge: 6px;
 
   /* Transitions */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 0.18s;
-  --duration-normal: 0.28s;
+  --duration-fast: 0.15s;
+  --duration-normal: 0.25s;
 }
 
-/* Dark Mode overrides */
+/* Dark Mode (Midnight Issue / Editorial Night Edition) */
 html.dark {
-  --bg-main: #0b0f19;
-  --bg-grid-color: rgba(147, 197, 253, 0.13);
-  --card-bg: rgba(17, 24, 39, 0.85);
-  --card-bg-subtle: #1e293b;
-  --card-border: rgba(255, 255, 255, 0.09);
-  --card-border-hover: rgba(59, 130, 246, 0.5);
+  --bg-main: #0c121d;
+  --bg-paper: #131a28;
+  --bg-grid-color: rgba(255, 255, 255, 0.08);
+  
+  --card-bg: #151d2c;
+  --card-bg-subtle: #1c273a;
+  --card-border: #93c5fd;
+  --card-border-hover: #60a5fa;
   
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-
-  --accent-indigo: #3b82f6;
-  --accent-indigo-hover: #60a5fa;
-  --accent-indigo-light: rgba(59, 130, 246, 0.16);
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   
-  --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 24px 48px -4px rgba(0, 0, 0, 0.65);
-  --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.3);
-  --code-bg: #030712;
+  --pop-orange: #ff6b3d;
+  --pop-blue: #38bdf8;
+  --pop-yellow: #fef08a;
+  --pop-green: #34d399;
+  
+  --accent-indigo: #38bdf8;
+  --accent-indigo-hover: #7dd3fc;
+  --accent-indigo-light: rgba(56, 189, 248, 0.15);
+
+  --shadow-sm: 2px 2px 0px #93c5fd;
+  --shadow-md: 3.5px 3.5px 0px #93c5fd;
+  --shadow-lg: 5px 5px 0px #93c5fd;
+  --shadow-glow: 0 0 0 2px #93c5fd, 4px 4px 0px #ff6b3d;
+  --shadow-retro: 3.5px 3.5px 0px #93c5fd;
 }

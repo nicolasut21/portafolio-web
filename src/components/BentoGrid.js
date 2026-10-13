@@ -1,3 +1,5 @@
+import { milestonesData } from '../data/bentoData.js';
+
 export function renderBentoGrid() {
   return `
     <section id="bento" class="section bento-section container">
@@ -13,18 +15,18 @@ export function renderBentoGrid() {
         <!-- Bento 1: Proyecto Destacado (SafeTrails) -->
         <article class="bento-card bento-featured reveal-on-scroll" id="card-featured-safetrails">
           <div class="bento-card-header">
-            <span class="bento-pill bento-pill-indigo">Caso Destacado</span>
-            <span class="bento-pill">PWA + Leaflet + React 19</span>
+            <span class="bento-pill bento-pill-indigo">Proyecto de Título UNAB</span>
+            <span class="bento-pill">React Native + Web</span>
           </div>
-          <h3 class="bento-card-title">SafeTrails: PWA de Seguridad & Tracking</h3>
+          <h3 class="bento-card-title">SafeTrails: Seguridad & Tracking GPS</h3>
           <p class="bento-card-desc">
-            Geolocalización en tiempo real con motor reactivo de geofencing (AlarmEngine), trazado dinámico de rutas con Leaflet y arquitectura offline en React 19.
+            Geolocalización en tiempo real con motor reactivo de geofencing (AlarmEngine), seguimiento GPS continuo de rutas y diseño centrado en el usuario (UX/UI).
           </p>
           <div class="project-preview-frame">
             <img src="./projects/safetrails_desktop.jpg" alt="Mockup de la plataforma SafeTrails" loading="lazy" />
           </div>
           <div class="bento-featured-footer">
-            <span class="bento-featured-metric">Métrica: Alertas en Terreno</span>
+            <span class="bento-featured-metric">Titulado UNAB (2025)</span>
             <button class="view-case-btn" data-case="safetrails">Explorar Caso Detallado →</button>
           </div>
         </article>
@@ -116,23 +118,50 @@ export function renderBentoGrid() {
           </svg>
         </article>
 
-        <!-- Bento 5: Live Code Preview -->
-        <article class="bento-card bento-code reveal-on-scroll" id="card-code">
+        <!-- Bento 5: Formación, Trayectoria & Hitos -->
+        <article class="bento-card bento-milestones reveal-on-scroll" id="card-milestones">
           <div class="bento-card-header">
-            <span class="bento-pill">Live Code Preview</span>
-            <button id="btn-copy-code" class="btn-secondary" style="padding: 0.25rem 0.65rem; font-size: 0.75rem;" title="Copiar código al portapapeles">
-              Copiar
-            </button>
+            <span class="bento-pill bento-pill-indigo">Formación & Trayectoria</span>
+            <span class="milestones-status-badge">● Titulado UNAB • YC Startup School</span>
           </div>
-          <div class="code-box-header">
-            <div class="code-tabs">
-              <button class="code-tab-btn active" data-lang="react">React Hook</button>
-              <button class="code-tab-btn" data-lang="node">Node.js API</button>
-              <button class="code-tab-btn" data-lang="sql">SQL Query</button>
-              <button class="code-tab-btn" data-lang="design">Tokens CSS</button>
+          <h3 class="bento-card-title">Hitos & Evolución Profesional</h3>
+          <p class="bento-card-desc">
+            Base académica en ingeniería combinada con el despliegue de sistemas reales en producción y metodologías modernas de producto.
+          </p>
+
+          <div class="milestones-timeline">
+            ${milestonesData.map(item => `
+              <div class="milestone-item">
+                <div class="milestone-icon-wrap">${item.icon}</div>
+                <div class="milestone-content">
+                  <div class="milestone-header-line">
+                    <span class="milestone-item-title">${item.title}</span>
+                    <span class="milestone-item-tag">${item.tag}</span>
+                  </div>
+                  <p class="milestone-item-desc">${item.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="milestones-footer-chips">
+            <div class="milestone-chip">
+              <span>🏛️</span>
+              <span><strong>Ing. Computación e Informática</strong> UNAB</span>
+            </div>
+            <div class="milestone-chip">
+              <span>🚀</span>
+              <span><strong>YC Startup School</strong> 2026</span>
+            </div>
+            <div class="milestone-chip">
+              <span>💼</span>
+              <span><strong>ERP SaaS</strong> en Producción</span>
+            </div>
+            <div class="milestone-chip">
+              <span>👥</span>
+              <span><strong>+3 Años</strong> Tutor UNAB</span>
             </div>
           </div>
-          <pre class="code-editor-viewport"><code id="code-display"></code></pre>
         </article>
 
         <!-- Bento 6: Stack Tecnológico Interactivo -->

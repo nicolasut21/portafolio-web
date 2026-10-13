@@ -1,63 +1,63 @@
 /* ==========================================================================
-   ABOUT & METHODOLOGY
+   POPEYE EDITORIAL ABOUT & SPECIAL PROFILE INTERVIEW
    ========================================================================== */
 
 .about-section {
-  border-top: 1px solid var(--card-border);
+  padding-block: 4.5rem;
+  border-top: 1.5px dashed var(--card-border);
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
 .about-photo-card {
   position: relative;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 28px;
-  padding: 2rem;
-  box-shadow: var(--shadow-lg);
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-retro);
   min-width: 0;
   max-width: 100%;
 }
 
 .about-highlight-box {
-  background: var(--accent-gradient);
-  border-radius: 20px;
-  padding: 2.25rem 2rem;
+  background: #0a0a0a;
   color: #ffffff;
+  border: 1.5px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.85rem 1.5rem;
+  box-shadow: 3px 3px 0px var(--pop-orange);
   position: relative;
   overflow: hidden;
-  min-width: 0;
-  max-width: 100%;
 }
 
-.about-highlight-box::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
-  pointer-events: none;
+html.dark .about-highlight-box {
+  background: var(--card-bg-subtle);
+  border-color: var(--card-border);
+  box-shadow: 3px 3px 0px #93c5fd;
 }
 
 .about-role-title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.25;
   margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
 }
 
 .about-role-sub {
-  font-size: 1rem;
-  opacity: 0.92;
+  font-size: 0.9375rem;
+  opacity: 0.95;
   line-height: 1.6;
 }
 
 .about-content-text p {
-  font-size: 1.0625rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1.15rem;
@@ -67,40 +67,63 @@
 .about-pillars-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-top: 1.75rem;
+  gap: 1.15rem;
+  margin-top: 2rem;
 }
 
 .pillar-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: #ffffff;
+  border: var(--card-border-width) solid var(--card-border);
   padding: 1.25rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
+  border-radius: 12px;
+  box-shadow: 2.5px 2.5px 0px var(--card-border);
+  transition: all var(--duration-fast);
+}
+
+html.dark .pillar-card {
+  background: var(--card-bg-subtle);
+}
+
+.pillar-card:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--card-border);
+  border-color: var(--pop-blue);
 }
 
 .pillar-icon {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  background: var(--accent-indigo-light);
-  color: var(--accent-indigo);
+  border-radius: 8px;
+  background: var(--pop-yellow);
+  color: #0a0a0a;
+  border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.75rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 1.5px 1.5px 0px var(--card-border);
 }
 
 .pillar-title {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
   color: var(--text-primary);
 }
 
 .pillar-desc {
   font-size: 0.8125rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
 }

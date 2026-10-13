@@ -249,88 +249,110 @@ img {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent-indigo);
-  background: var(--accent-indigo-light);
+  color: #0a0a0a;
+  background: var(--pop-yellow);
   padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  margin-bottom: 1rem;
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.15rem;
+}
+
+html.dark .section-tag {
+  color: #0a0a0a;
+  background: var(--pop-yellow);
+  border-color: #f8fafc;
+  box-shadow: 2px 2px 0px #f8fafc;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  letter-spacing: -0.02em;
   color: var(--text-primary);
-  line-height: 1.18;
+  line-height: 1.25;
   margin-bottom: 1rem;
   text-wrap: balance;
 }
 
 .section-description {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
-/* Global Buttons */
+/* Global Buttons - Popeye Retro Offset Shadow */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.65rem 1.35rem;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
-  background: var(--text-primary);
-  border-radius: 9999px;
-  transition: all var(--duration-normal) var(--ease-spring);
+  background: #0a0a0a;
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-fast);
   box-shadow: var(--shadow-sm);
 }
 
 html.dark .btn-primary {
-  background: #ffffff;
-  color: #0f172a;
+  background: #f8fafc;
+  color: #0a0a0a;
+  border-color: #f8fafc;
+  box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  opacity: 0.94;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--card-border);
+  opacity: 0.95;
 }
 
 .btn-gradient {
-  background: var(--accent-gradient);
+  background: var(--pop-orange) !important;
   color: #ffffff !important;
+  border: var(--card-border-width) solid var(--card-border);
 }
 
 .btn-gradient:hover {
-  background: var(--accent-gradient-hover);
-  box-shadow: var(--shadow-glow);
+  background: #e64a19 !important;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--card-border);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.65rem 1.35rem;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
-  border-radius: 9999px;
+  background: #ffffff;
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-pill);
   transition: all var(--duration-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+html.dark .btn-secondary {
+  background: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-indigo);
-  color: var(--accent-indigo);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--pop-blue);
+  color: var(--pop-blue);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--card-border);
 }

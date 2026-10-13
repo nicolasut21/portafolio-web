@@ -1,64 +1,106 @@
 /* ==========================================================================
-   CONTACT & FOOTER
+   POPEYE EDITORIAL CONTACT & COLOPHON FOOTER
    ========================================================================== */
 
 .contact-section {
-  border-top: 1px solid var(--card-border);
+  padding-block: 4.5rem;
+  border-top: 1.5px dashed var(--card-border);
 }
 
 .contact-card-box {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 28px;
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-lg);
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2.25rem;
+  box-shadow: var(--shadow-retro);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   position: relative;
   overflow: hidden;
   min-width: 0;
   max-width: 100%;
 }
 
-.contact-info-col h3 {
-  font-size: 2rem;
+.contact-stamp-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  border: 1.5px dashed var(--pop-orange);
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
   font-weight: 800;
+  color: var(--pop-orange);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(3deg);
+  background: var(--card-bg);
+}
+
+.stamp-code {
+  font-size: 0.6875rem;
+  color: var(--text-primary);
+}
+
+.contact-box-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.contact-box-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .contact-links-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.75rem;
 }
 
 .contact-link-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.85rem 1.25rem;
-  border-radius: 14px;
-  background: var(--card-bg-subtle);
-  border: 1px solid var(--card-border);
-  font-weight: 600;
-  font-size: 0.9375rem;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #ffffff;
+  border: var(--card-border-width) solid var(--card-border);
+  box-shadow: 2px 2px 0px var(--card-border);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
   transition: all var(--duration-fast);
 }
 
+html.dark .contact-link-item {
+  background: var(--card-bg-subtle);
+}
+
 .contact-link-item:hover {
-  background: var(--card-bg);
-  border-color: var(--accent-indigo);
-  color: var(--accent-indigo);
-  transform: translateX(4px);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--card-border);
+  border-color: var(--pop-blue);
+  color: var(--pop-blue);
+}
+
+.contact-icon {
+  font-size: 1.1rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .form-group {
@@ -68,41 +110,64 @@
 }
 
 .form-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
 }
 
 .form-input, .form-textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border-radius: 12px;
-  border: 1px solid var(--card-border);
-  background: var(--card-bg-subtle);
+  border-radius: 8px;
+  border: var(--card-border-width) solid var(--card-border);
+  background: #ffffff;
   color: var(--text-primary);
-  font-family: inherit;
+  font-family: var(--font-sans);
   font-size: 0.9375rem;
+  box-shadow: 1.5px 1.5px 0px var(--card-border);
   transition: all var(--duration-fast);
+}
+
+html.dark .form-input,
+html.dark .form-textarea {
+  background: var(--card-bg-subtle);
 }
 
 .form-input:focus, .form-textarea:focus {
   outline: none;
-  border-color: var(--accent-indigo);
-  background: var(--card-bg);
-  box-shadow: 0 0 0 3px var(--accent-indigo-light);
+  border-color: var(--pop-blue);
+  box-shadow: 2.5px 2.5px 0px var(--pop-blue);
 }
 
-/* Footer */
+/* Footer & Colophon */
 .footer {
   padding-block: 2.5rem;
-  border-top: 1px solid var(--card-border);
-  font-size: 0.875rem;
+  border-top: 1.5px solid var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   color: var(--text-muted);
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .footer-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand-imprint {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .contact-card-box {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+  }
 }

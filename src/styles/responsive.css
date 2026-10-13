@@ -18,7 +18,7 @@
     gap: 1.25rem;
   }
 
-  .bento-featured, .bento-prototype, .bento-process, .bento-metrics, .bento-code, .bento-stack {
+  .bento-featured, .bento-prototype, .bento-process, .bento-metrics, .bento-code, .bento-milestones, .bento-stack {
     grid-column: 1 / -1;
   }
   
@@ -78,8 +78,8 @@
   }
 
   .hero-section {
-    padding-top: 6.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 5.25rem;
+    padding-bottom: 2rem;
     scroll-margin-top: 4.5rem;
     overflow-x: clip;
   }
@@ -163,7 +163,7 @@
     width: 100%;
   }
 
-  .bento-featured, .bento-prototype, .bento-process, .bento-metrics, .bento-code, .bento-stack {
+  .bento-featured, .bento-prototype, .bento-process, .bento-metrics, .bento-code, .bento-milestones, .bento-stack {
     grid-column: 1 / -1;
   }
 
@@ -423,7 +423,7 @@
   }
 
   .hero-section {
-    padding-top: 5.75rem;
+    padding-top: 5rem;
     padding-bottom: 1.25rem;
     overflow-x: clip;
   }

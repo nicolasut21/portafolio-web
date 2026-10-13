@@ -1,6 +1,5 @@
-import { processData, codeSnippets } from '../data/bentoData.js';
+import { processData } from '../data/bentoData.js';
 import { techStack } from '../data/techStack.js';
-import { showToast } from './contact.js';
 
 export function setupBentoPrototype() {
   const tabs = document.querySelectorAll('.proto-tab-btn');
@@ -44,41 +43,6 @@ export function setupBentoProcess() {
       }
     });
   });
-}
-
-export function setupLiveCodePreview() {
-  const codeEl = document.querySelector('#code-display');
-  const codeTabs = document.querySelectorAll('.code-tab-btn');
-  const copyBtn = document.querySelector('#btn-copy-code');
-  let currentLang = 'react';
-
-  function updateCode(lang) {
-    currentLang = lang;
-    if (codeEl) {
-      codeEl.textContent = codeSnippets[lang] || '';
-    }
-  }
-
-  codeTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      codeTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      updateCode(tab.dataset.lang);
-    });
-  });
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const textToCopy = codeSnippets[currentLang];
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        copyBtn.textContent = '¡Copiado! ✓';
-        setTimeout(() => { copyBtn.textContent = 'Copiar'; }, 2000);
-        showToast('Código copiado al portapapeles');
-      });
-    });
-  }
-
-  updateCode('react');
 }
 
 export function setupTechStackFilter() {

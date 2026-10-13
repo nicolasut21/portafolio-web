@@ -21,74 +21,36 @@ export const processData = {
   }
 };
 
-export const codeSnippets = {
-  react: `// Custom Hook para micro-interacciones suaves
-import { useState, useEffect } from 'react';
-
-export function useInteractionMetric(elementId) {
-  const [metrics, setMetrics] = useState({ clicks: 0, hoverTime: 0 });
-
-  useEffect(() => {
-    const el = document.getElementById(elementId);
-    let start = 0;
-    
-    const onEnter = () => { start = performance.now(); };
-    const onLeave = () => {
-      const duration = performance.now() - start;
-      setMetrics(prev => ({ ...prev, hoverTime: prev.hoverTime + duration }));
-    };
-
-    el?.addEventListener('mouseenter', onEnter);
-    el?.addEventListener('mouseleave', onLeave);
-    return () => {
-      el?.removeEventListener('mouseenter', onEnter);
-      el?.removeEventListener('mouseleave', onLeave);
-    };
-  }, [elementId]);
-
-  return metrics;
-}`,
-  node: `// Endpoint de Transformación y Validación de Datos
-import express from 'express';
-const router = express.Router();
-
-router.post('/api/v1/metrics/track', async (req, res) => {
-  const { eventType, userId, latencyMs } = req.body;
-  
-  if (!eventType || !userId) {
-    return res.status(400).json({ error: 'Parámetros requeridos faltantes' });
+export const milestonesData = [
+  {
+    icon: '🎓',
+    title: 'Ingeniero en Computación e Informática',
+    tag: 'UNAB — Titulado',
+    desc: 'Titulado en la Universidad Andrés Bello. Formación de excelencia en arquitectura de software, modelado de sistemas, algoritmia y metodologías ágiles.'
+  },
+  {
+    icon: '🚀',
+    title: 'Y Combinator Startup School & Product Management',
+    tag: 'Startups & Producto',
+    desc: 'Formación continua en validación y escalamiento de startups en YC (2026) y certificación en Diseño y Lanzamiento de Productos Digitales (Santander Open Academy).'
+  },
+  {
+    icon: '💼',
+    title: 'Transformación Digital & ERP SaaS',
+    tag: 'Ferretería Maldonado (2026)',
+    desc: 'Liderazgo técnico en diseño y desarrollo de plataforma ERP SaaS integral para digitalizar inventario, ventas, stock y reportería con principios de ERP / Odoo.'
+  },
+  {
+    icon: '🤖',
+    title: 'IA Generativa & Prompt Engineering',
+    tag: 'Aceleración Técnica',
+    desc: 'Dominio avanzado de modelos LLM (Claude, Gemini, ChatGPT, Copilot) para acelerar ciclos de prototipado, refactorización y arquitectura de software.'
+  },
+  {
+    icon: '👥',
+    title: 'Mentoría Académica & Liderazgo EdTech',
+    tag: '+3 Años en UNAB',
+    desc: 'Tutor de acompañamiento formativo y difusión en la Universidad Andrés Bello (2023–Actualidad), con fuerte empatía de usuario y orientación pedagógica.'
   }
+];
 
-  // Registro optimizado con auditoría asíncrona
-  const record = await db.analytics.insert({
-    eventType,
-    userId,
-    latencyMs: latencyMs ?? 0,
-    timestamp: new Date()
-  });
-
-  return res.status(201).json({ success: true, id: record.id });
-});`,
-  sql: `-- Consulta de Cohortes y Tasa de Retención
-SELECT 
-  DATE_TRUNC('month', u.created_at) AS cohort_month,
-  COUNT(DISTINCT u.id) AS total_users,
-  COUNT(DISTINCT CASE WHEN a.event_date >= u.created_at + INTERVAL '30 days' THEN u.id END) AS retained_30d,
-  ROUND(
-    COUNT(DISTINCT CASE WHEN a.event_date >= u.created_at + INTERVAL '30 days' THEN u.id END) * 100.0 / 
-    NULLIF(COUNT(DISTINCT u.id), 0), 2
-  ) AS retention_rate_pct
-FROM users u
-LEFT JOIN activity_logs a ON u.id = a.user_id
-GROUP BY 1
-ORDER BY 1 DESC;`,
-  design: `/* Design Tokens: Variables Centralizadas */
-:root {
-  --token-color-primary: #2563eb;
-  --token-color-surface: #ffffff;
-  --token-radius-bento: 24px;
-  --token-transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-  --token-shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-  --token-spacing-base: 1rem;
-}`
-};

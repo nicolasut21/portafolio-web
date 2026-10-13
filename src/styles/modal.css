@@ -1,13 +1,13 @@
 /* ==========================================================================
-   MODAL CASE STUDY & TOAST NOTIFICATION
+   POPEYE EDITORIAL CASE STUDY MODAL & TOAST
    ========================================================================== */
 
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
   padding: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--duration-normal) var(--ease-spring);
+  transition: opacity var(--duration-fast);
 }
 
 .modal-backdrop.open {
@@ -24,45 +24,54 @@
 }
 
 .modal-container {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 28px;
+  background: #ffffff;
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-card);
   width: 100%;
-  max-width: 840px;
+  max-width: 860px;
   max-height: 88vh;
   overflow-y: auto;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
-  transform: translateY(20px) scale(0.97);
+  padding: 2.25rem;
+  box-shadow: 6px 6px 0px #0a0a0a;
+  transform: translateY(12px);
   transition: transform var(--duration-normal) var(--ease-spring);
   position: relative;
 }
 
+html.dark .modal-container {
+  background: var(--card-bg);
+  box-shadow: 6px 6px 0px #93c5fd;
+}
+
 .modal-backdrop.open .modal-container {
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.25rem;
+  right: 1.25rem;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: var(--card-bg-subtle);
-  border: 1px solid var(--card-border);
+  border: var(--card-border-width) solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
-  color: var(--text-secondary);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  box-shadow: 1.5px 1.5px 0px var(--card-border);
   transition: all var(--duration-fast);
+  cursor: pointer;
 }
 
 .modal-close-btn:hover {
-  background: var(--card-bg);
-  color: var(--accent-indigo);
-  transform: scale(1.05);
+  background: var(--pop-orange);
+  color: #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 0.5px 0.5px 0px var(--card-border);
 }
 
 .modal-split-grid {
@@ -71,31 +80,39 @@
   gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .modal-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Toast Notification */
 .toast-msg {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 1100;
-  background: #0f172a;
+  background: #0a0a0a;
   color: #ffffff;
-  padding: 0.85rem 1.5rem;
-  border-radius: 9999px;
-  box-shadow: var(--shadow-lg);
-  font-weight: 600;
-  font-size: 0.875rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: var(--card-border-width) solid var(--card-border);
+  box-shadow: 3px 3px 0px var(--pop-yellow);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8125rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   transform: translateY(100px);
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all var(--duration-normal) var(--ease-spring);
 }
 
 html.dark .toast-msg {
-  background: #1e293b;
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border-color: #f8fafc;
+  box-shadow: 3px 3px 0px var(--pop-orange);
 }
 
 .toast-msg.show {
