@@ -3,7 +3,7 @@ export function renderFooter() {
     <footer class="footer container">
       <div class="footer-content">
         <div>
-          <span class="footer-brand-imprint">POPEYE WEB TECH JOURNAL • VOL. 2026</span><br />
+          <span class="footer-brand-imprint">NICOLÁS URBANO • TECH & PRODUCT JOURNAL • VOL. 2026</span><br />
           © ${new Date().getFullYear()} <strong>Abraham Nicolás Urbano Toro</strong>. Ingeniero en Computación e Informática (UNAB). Santiago, Chile.
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">

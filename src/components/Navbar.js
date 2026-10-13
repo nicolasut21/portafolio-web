@@ -3,13 +3,13 @@ export function renderNavbar() {
     <!-- Barra de progreso de scroll -->
     <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
 
-    <!-- Navegación Editorial Popeye -->
+    <!-- Navegación Editorial -->
     <header class="navbar">
       <nav class="nav-content" aria-label="Navegación principal">
         <a href="#hero" class="nav-brand" id="brand-link">
           <span class="nav-brand-badge">VOL. 2026</span>
           <span class="nav-brand-text">NICOLÁS URBANO</span>
-          <span class="nav-brand-sub">POPEYE TECH JOURNAL</span>
+          <span class="nav-brand-sub">SOFTWARE & PRODUCT JOURNAL</span>
         </a>
 
         <ul class="nav-links">

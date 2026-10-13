@@ -3,7 +3,7 @@ export function renderHero() {
     <section id="hero" class="hero-section container reveal-on-scroll is-visible">
       <div class="hero-issue-meta">
         <span class="meta-dot">●</span>
-        <span class="meta-text">POPEYE TECH JOURNAL • VOL. 01 • ISSUE 2026 • SANTIAGO, CL</span>
+        <span class="meta-text">TECH & PRODUCT JOURNAL • VOL. 01 • ISSUE 2026 • SANTIAGO, CL</span>
       </div>
 
       <div class="hero-cover-tag">
@@ -17,11 +17,11 @@ export function renderHero() {
 
       <!-- Editorial Sticker Tags -->
       <div class="hero-stickers-row">
-        <span class="popeye-sticker sticker-unab">🎓 TITULADO UNAB</span>
-        <span class="popeye-sticker sticker-yc">🚀 YC STARTUP SCHOOL</span>
-        <span class="popeye-sticker sticker-erp">💼 ERP SAAS & ODOO</span>
-        <span class="popeye-sticker sticker-ai">🤖 IA GENERATIVA</span>
-        <span class="popeye-sticker sticker-loc">📍 LAS CONDES, SANTIAGO</span>
+        <span class="editorial-sticker sticker-unab">🎓 TITULADO UNAB</span>
+        <span class="editorial-sticker sticker-yc">🚀 YC STARTUP SCHOOL</span>
+        <span class="editorial-sticker sticker-erp">💼 ERP SAAS & ODOO</span>
+        <span class="editorial-sticker sticker-ai">🤖 IA GENERATIVA</span>
+        <span class="editorial-sticker sticker-loc">📍 LAS CONDES, SANTIAGO</span>
       </div>
 
       <p class="hero-subtitle">

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   POPEYE MAGAZINE COVER HERO SECTION
+   EDITORIAL MAGAZINE COVER HERO SECTION
    ========================================================================== */
 
 .hero-section {
@@ -76,7 +76,7 @@ html.dark .hero-highlight-phrase {
   margin-bottom: 1.5rem;
 }
 
-.popeye-sticker {
+.editorial-sticker {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -92,7 +92,7 @@ html.dark .hero-highlight-phrase {
   cursor: default;
 }
 
-.popeye-sticker:hover {
+.editorial-sticker:hover {
   transform: translateY(-2px);
 }
 
@@ -121,7 +121,7 @@ html.dark .hero-highlight-phrase {
   color: #ffffff;
 }
 
-html.dark .popeye-sticker {
+html.dark .editorial-sticker {
   box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4);
 }
 
